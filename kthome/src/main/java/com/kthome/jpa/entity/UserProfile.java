@@ -1,14 +1,12 @@
-package com.kthome.entity;
+package com.kthome.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_PROFILE")
-@NamedQuery(name = "UserProfile.findAll", query = "SELECT u FROM UserProfile u")
 public class UserProfile implements java.io.Serializable {
 
 	/**
@@ -72,17 +70,17 @@ public class UserProfile implements java.io.Serializable {
 		return status;
 	}
 
-	@Column(name = "REMARK_1", length = 50)
+	@Column(name = "REMARK1", length = 50)
 	public String getRemark1() {
 		return remark1;
 	}
 
-	@Column(name = "REMARK_2", length = 50)
+	@Column(name = "REMARK2", length = 50)
 	public String getRemark2() {
 		return remark2;
 	}
 
-	@Column(name = "REMARK_3", length = 50)
+	@Column(name = "REMARK3", length = 50)
 	public String getRemark3() {
 		return remark3;
 	}
