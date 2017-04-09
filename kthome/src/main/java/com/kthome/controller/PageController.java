@@ -1,9 +1,5 @@
 package com.kthome.controller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
