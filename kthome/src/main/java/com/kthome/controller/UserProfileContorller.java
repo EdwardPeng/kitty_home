@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.kthome.jpa.entity.UserProfile;
 import com.kthome.service.UserProfileService;
+import com.kthome.service.vo.UserProfileRequestVo;
 
 @Controller
 public class UserProfileContorller {
@@ -20,11 +22,14 @@ public class UserProfileContorller {
 	
 	@RequestMapping(value = "addShowUserProfile")
 	public String addShow(ModelMap model) {
-		return null;
+		return "editUserProfile";
 	}
 	
 	@RequestMapping(value = "editShowUserProfile")
-	public String editShow(ModelMap model) {
-		return null;
+	public String editShow(UserProfileRequestVo request, ModelMap model) {
+		String userId = request.getUserId();
+		UserProfile userProfile = userProfileService.findByUserId(userId);
+		model.addAttribute("userProfile", userProfile);
+		return "editUserProfile";
 	}
 }

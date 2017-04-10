@@ -1,5 +1,7 @@
 package com.kthome.service.impl;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +18,11 @@ public class UserProfileServiceImpl implements UserProfileService {
 	@Override
 	public UserProfile findByUserId(String id) {
 		return userProfileRepository.findByUserId(id);
+	}
+
+	@Transactional
+	@Override
+	public void saveOrUpdate(UserProfile userProfile) {
+		userProfileRepository.save(userProfile);
 	}
 }
