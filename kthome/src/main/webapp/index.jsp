@@ -179,7 +179,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/function.js"></script>
     <script>
     	$('button[name="close"]').toggle(
     		function() {

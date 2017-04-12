@@ -16,7 +16,7 @@
 	</ul>
 	<div class="porlet">
 		<div class="porlet-body">
-			<form>
+			<form id="form">
 				<div class="form-group">
 					<label class="col-xs-2 col-form-label text-right">電話</label>
 					<div class="col-sm-9">
@@ -32,7 +32,7 @@
 				<div class="form-action">
 					<div class="col-sm-11">
 						<button type="button" class="btn btn-primary pull-right" onclick="">查詢</button>
-						<button type="button" class="btn btn-info pull-right" onclick="">新增</button>
+						<button type="button" class="btn btn-info pull-right" onclick="submitForm($('#form'),'addShowUserProfile')">新增</button>
 					</div>
 				</div>
 			</form>

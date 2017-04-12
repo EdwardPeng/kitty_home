@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_PROFILE")
-public class UserProfile implements java.io.Serializable {
+public class UserProfile extends BaseEntity implements java.io.Serializable {
 
 	/**
 	 * 
