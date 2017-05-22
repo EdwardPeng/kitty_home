@@ -16,7 +16,7 @@
 	</ul>
 	<div class="porlet">
 		<div class="porlet-body">
-			<form>
+			<form id="editForm">
 				<table class="table">
 					<tr>
 						<th>會員姓名</th>
@@ -54,7 +54,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<button type="button" class="btn btn-primary pull-right" onclick="">存檔</button>
+							<button type="button" class="btn btn-primary pull-right" onclick="doSave()">存檔</button>
 						</td>
 					</tr>
 				</table>
@@ -63,3 +63,17 @@
 	</div>
 </body>
 </html>
+<script>
+function doSave() {
+	$.ajax({
+		url:"${action}",
+		type:"POST",
+		data:$("#editForm").serialize(),
+		dataType: "html",
+		success: function(data){
+			alert("Success");
+			submitForm($("#editForm"), "queryUserProfile");
+		}
+	});
+}
+</script>

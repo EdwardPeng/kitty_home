@@ -37,6 +37,20 @@
 				</div>
 			</form>
 		</div>
+		<div>
+			<table id='grid'></table>
+			<div id='pager'></div>
+		</div>
 	</div>
 </body>
 </html>
+<script type='text/javascript'>
+	$("#grid").jqGrid({
+		"viewrecords":true,
+		"gridview":true,
+		"url":"",
+		"loadonce": true,
+		"autowidth":true,
+		"pager":"#pager"
+	});
+</script>

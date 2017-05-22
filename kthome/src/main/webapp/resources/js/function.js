@@ -1,5 +1,4 @@
 function submitForm(form, action) {
-	alert(form);
 	$.ajax({
 		url : action,
 		type : "POST",

@@ -3,8 +3,10 @@ package com.kthome.jpa.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
-public class BaseEntity implements java.io.Serializable {
+@MappedSuperclass
+public abstract class BaseEntity implements java.io.Serializable {
 
 	/**
 	 * 

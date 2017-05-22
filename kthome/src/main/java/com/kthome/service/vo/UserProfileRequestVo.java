@@ -1,6 +1,11 @@
 package com.kthome.service.vo;
 
-public class UserProfileRequestVo {
+public class UserProfileRequestVo implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4459203840748419516L;
 
 	private String userId;
 	
@@ -14,13 +19,7 @@ public class UserProfileRequestVo {
 	
 	private String phone;
 	
-	private String status;
-	
-	private String remark1;
-	
-	private String remark2;
-	
-	private String remark3;
+	private String line;
 
 	public String getUserId() {
 		return userId;
@@ -70,35 +69,11 @@ public class UserProfileRequestVo {
 		this.phone = phone;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getLine() {
+		return line;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getRemark1() {
-		return remark1;
-	}
-
-	public void setRemark1(String remark1) {
-		this.remark1 = remark1;
-	}
-
-	public String getRemark2() {
-		return remark2;
-	}
-
-	public void setRemark2(String remark2) {
-		this.remark2 = remark2;
-	}
-
-	public String getRemark3() {
-		return remark3;
-	}
-
-	public void setRemark3(String remark3) {
-		this.remark3 = remark3;
+	public void setLine(String line) {
+		this.line = line;
 	}
 }

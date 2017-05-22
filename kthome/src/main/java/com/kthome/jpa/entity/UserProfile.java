@@ -26,6 +26,8 @@ public class UserProfile extends BaseEntity implements java.io.Serializable {
 	
 	private String phone;
 	
+	private String line;
+	
 	private String status;
 	
 	private String remark1;
@@ -63,6 +65,11 @@ public class UserProfile extends BaseEntity implements java.io.Serializable {
 	@Column(name = "PHONE", length = 50)
 	public String getPhone() {
 		return phone;
+	}
+	
+	@Column(name = "LINE", length = 50)
+	public String getLine() {
+		return line;
 	}
 
 	@Column(name = "STATUS", length = 3)
@@ -123,6 +130,10 @@ public class UserProfile extends BaseEntity implements java.io.Serializable {
 
 	public void setRemark3(String remark3) {
 		this.remark3 = remark3;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
 	}
 
 }
