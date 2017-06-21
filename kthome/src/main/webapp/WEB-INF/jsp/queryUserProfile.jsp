@@ -31,7 +31,7 @@
 				</div>
 				<div class="form-action">
 					<div class="col-sm-11">
-						<button type="button" class="btn btn-primary pull-right" onclick="">查詢</button>
+						<button type="button" class="btn btn-primary pull-right" onclick="query()">查詢</button>
 						<button type="button" class="btn btn-info pull-right" onclick="submitForm($('#form'),'addShowUserProfile')">新增</button>
 					</div>
 				</div>
@@ -45,12 +45,25 @@
 </body>
 </html>
 <script type='text/javascript'>
-	$("#grid").jqGrid({
-		"viewrecords":true,
-		"gridview":true,
-		"url":"",
-		"loadonce": true,
-		"autowidth":true,
-		"pager":"#pager"
-	});
+	function query() {
+		$("#grid").jqGrid({
+			"viewrecords":true,
+			"gridview":true,
+			"url":"queryUserProfileAjax",
+			"mtype": "POST",
+			"datatype":"json",
+			"colNames":['會員編號','會員姓名','性別','電話'],
+			"colModel":[
+				{name:'userId',index:'userId', width:55},
+				{name:'userName',index:'userName', width:55},
+				{name:'gender',index:'gender', width:55},
+				{name:'phone',index:'phone', width:55},
+			],
+			"rowNum":10,
+		   	"rowList":[10,20,30],
+			"loadonce": true,
+			"autowidth":true,
+			"pager":"#pager"
+		});
+	}
 </script>

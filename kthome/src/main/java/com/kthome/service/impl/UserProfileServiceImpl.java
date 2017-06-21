@@ -4,6 +4,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -34,8 +35,9 @@ public class UserProfileServiceImpl implements UserProfileService {
 		userProfileRepository.save(userProfile);
 	}
 	
+	@Override
 	public Page<UserProfile> query(String name, String phone, int page, int size) {
-		Pageable pageable = new PageRequest(page, size, Direction.ASC);
+		Pageable pageable = new PageRequest(page, size, Direction.ASC, "userName");
 		
 		return userProfileRepository.findAll(lastNameIsLike(name), pageable);
 	}
@@ -55,8 +57,10 @@ public class UserProfileServiceImpl implements UserProfileService {
 			public Predicate toPredicate(Root<UserProfile> userProfileRoot, javax.persistence.criteria.CriteriaQuery<?> arg1,
 					CriteriaBuilder cb) {
 				Predicate predicate = cb.conjunction();
-				String likePattern = getLikePattern(searchTerm);
-                predicate.getExpressions().add(cb.like(cb.lower(userProfileRoot.<String>get("userName")), likePattern));
+				if (StringUtils.isNotBlank(searchTerm)) {
+					String likePattern = getLikePattern(searchTerm);
+	                predicate.getExpressions().add(cb.like(cb.lower(userProfileRoot.<String>get("userName")), likePattern));
+				}
                 return predicate;
 			}
         };
